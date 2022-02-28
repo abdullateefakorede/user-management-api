@@ -21,7 +21,6 @@ class UserController {
       }
       const data = { username: user.username, id: user.id }
       const token = AuthService.generateToken(data)
-      AuthService.decodeToken(token)
       req.user = data
       return responseHelper.successHandler(res, 'LOGIN_SUCCESSFUL', {
         token,
