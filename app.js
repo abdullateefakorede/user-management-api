@@ -32,7 +32,7 @@ app.options('*', cors())
 
 app.listen(config.port, async function () {
   try {
-    await mongoose.connect(`${config.db_url}`)
+    await mongoose.connect(`${config.MONGODB_URI}`)
     console.log(`Driver service is running on ${config.port}`)
   } catch (error) {
     console.log(error)
